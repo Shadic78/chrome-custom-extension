@@ -1,0 +1,13 @@
+{
+  "name": "CompucaliTV Adds Bypass",
+  "description": "Allows to bypass the 30 seconds adds to get download links on CompucaliTV",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
