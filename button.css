@@ -1,14 +1,45 @@
-button {
-  display: inline-block;
-  padding: .5em 1em;
-  background-color: #A68DCE;
-  outline: none;
+body {
+  width: 128px;
+  background-color: #2C2C2C;
   color: #FEFEFE;
+}
+
+button {
+  box-sizing: border-box;
+  color: #FEFEFE;
+  padding: .5em 1em;
+  background-color: #8154C8;
+  outline: none;
   margin: 10px;
   border: none;
   border-radius: 10px;
+  transition: background-color ease .4s;
 }
 
 button:hover {
-  background-color: #7550b4;
+  background-color: #5d379b;
+  cursor: pointer;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 1em .5em .2em .5em;
+  font-style: italic;
+}
+
+.titleExtra {
+  font-size: 12px;
+  font-style: normal;
+}
+
+.logoDecoration {
+  color: #4AC6ED;
+  font-size: 1.2em;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
 }
