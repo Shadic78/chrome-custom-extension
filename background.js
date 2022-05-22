@@ -11,10 +11,17 @@ const navigateToDownload = () => {
   location.href = getDecodedUrl(encodedUrl);
 };
 
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.storage.sync.set({ autoRedirect: true });
+});
+
 chrome.webNavigation.onBeforeNavigate.addListener(async () => {
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: navigateToDownload,
+  chrome.storage.sync.get('autoRedirect', async ({autoRedirect}) => {
+    if(!autoRedirect) return;
+    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      function: navigateToDownload,
+    });
   });
 }, {url: [{hostSuffix: 'compul.us'}, {hostSuffix: 'compul.in'}]});

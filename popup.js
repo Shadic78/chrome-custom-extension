@@ -10,7 +10,7 @@ const navigateToDownload = () => {
   };
 
   const encodedUrl = getEncodedUrl();
-  window.open(getDecodedUrl(encodedUrl));
+  location.href = getDecodedUrl(encodedUrl);
 };
 
 skipBtn.addEventListener('click', async () => {
