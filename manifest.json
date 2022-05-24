@@ -1,7 +1,7 @@
 {
   "name": "CompucaliTV Ads Bypass",
   "description": "Allows to bypass the 30 seconds ads to get download links on CompucaliTV",
-  "version": "1.0",
+  "version": "1.0.1",
   "author": "Shadic78",
   "manifest_version": 3,
   "background": {
