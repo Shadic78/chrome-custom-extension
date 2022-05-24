@@ -1,6 +1,6 @@
 {
-  "name": "CompucaliTV Ads Bypass",
-  "description": "Allows to bypass the 30 seconds ads to get download links on CompucaliTV",
+  "name": "Ads bypass for some pages",
+  "description": "Allows to bypass the 30 seconds ads to get download links on CompucaliTV and the ads on japan-paw",
   "version": "1.0.1",
   "author": "Shadic78",
   "manifest_version": 3,
