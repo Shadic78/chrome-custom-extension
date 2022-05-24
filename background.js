@@ -24,4 +24,4 @@ chrome.webNavigation.onBeforeNavigate.addListener(async () => {
       function: navigateToDownload,
     });
   });
-}, {url: [{hostSuffix: 'compul.us'}, {hostSuffix: 'compul.in'}]});
+}, {url: [{hostSuffix: 'compul.us'}, {hostSuffix: 'compul.in'}, {hostSuffix: 'ctvout.buzz'}]});
