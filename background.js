@@ -1,10 +1,14 @@
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ autoRedirect: true });
+  const defaultConfig = {
+    ctAutoRedirect: true,
+    jpShowLinks: true,
+  };
+  chrome.storage.sync.set({ options: defaultConfig });
 });
 
 chrome.webNavigation.onBeforeNavigate.addListener(async () => {
-  chrome.storage.sync.get('autoRedirect', async ({autoRedirect}) => {
-    if(!autoRedirect) return;
+  chrome.storage.sync.get('options', async ({options}) => {
+    if(!options.ctAutoRedirect) return;
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
@@ -14,12 +18,12 @@ chrome.webNavigation.onBeforeNavigate.addListener(async () => {
 }, {url: [{hostSuffix: 'compul.us'}, {hostSuffix: 'compul.in'}, {hostSuffix: 'ctvout.buzz'}]});
 
 chrome.webNavigation.onBeforeNavigate.addListener(async () => {
-  chrome.storage.sync.get('autoRedirect', async ({autoRedirect}) => {
-    if(!autoRedirect) return;
+  chrome.storage.sync.get('options', async ({options}) => {
+    if(!options.jpShowLinks) return;
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
       files: ['/scripts/jp-bypass.js'],
     });
   });
-}, {url: [{hostSuffix: 'biblioteca.japan-paw.net'}]});
+}, {url: [{hostSuffix: 'biblioteca.japan-paw.net'}, {hostSuffix: 'biblioteca.japan-paw.wtf'}]});

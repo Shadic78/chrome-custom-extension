@@ -3,12 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="options.css">
   <title>Options</title>
 </head>
 <body>
-  <div class="row">
-    <input type="checkbox" name="checkRedirect" id="checkRedirect"/>
-    <label for="checkRedirect">Automatic redirect</label>
+  <div class="wrapper">
+    <form id="optionsForm">
+      <div class="row">
+        <h1>Configuration options</h1>
+      </div>
+      <div class="row">
+        <div>
+          <label for="ctAutoRedirect">CompucaliTV automatic redirect</label>
+          <p>
+            Allow the extension to automatically redirect your browser tab to
+            the download links page without having to wait the 30 seconds ads.
+          </p>
+        </div>
+        <div>
+          <input type="checkbox" name="ctAutoRedirect" id="ctAutoRedirect"/>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="row">
+        <div>
+          <label for="jpShowLinks">Japan-Paw automatically show links</label>
+          <p>
+            Allow the extension to automatically get and show the download
+            links without having to go through ads.<br />
+            Only works for Google Drive links from Japan-Paw Discord server.
+          </p>
+        </div>
+        <div>
+          <input type="checkbox" name="jpShowLinks" id="jpShowLinks"/>
+        </div>
+      </div>
+    </form>
   </div>
   <script src="options.js"></script>
 </body>
