@@ -2,6 +2,7 @@ chrome.runtime.onInstalled.addListener(() => {
   const defaultConfig = {
     ctAutoRedirect: true,
     jpShowLinks: true,
+    animepls: true,
   };
   chrome.storage.sync.set({ options: defaultConfig });
 });
@@ -37,4 +38,10 @@ runOnCurrentTab({
   option: 'jpShowLinks',
   files: ['/scripts/jp-bypass.js'],
   hostsSuffixes: ['biblioteca.japan-paw.net', 'biblioteca.japan-paw.wtf'],
+});
+
+runOnCurrentTab({
+  option: 'animepls',
+  files: ['/scripts/animpls-bypass.js'],
+  hostsSuffixes: ['animepls.ga'],
 });
