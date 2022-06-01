@@ -12,13 +12,13 @@ const onPageLoad = () => {
   // Get config
   chrome.storage.sync.get('options', (data) => {
     Object.assign(options, data.options);
-    for(key in options) {
+    for (key in options) {
       optionsForm[key].checked = Boolean(options[key]);
     }
   });
   // Save changes
   const checkNodes = document.querySelectorAll('input');
-  checkNodes.forEach(check => {
+  checkNodes.forEach((check) => {
     check.addEventListener('click', handleChangeOption);
   });
 };
