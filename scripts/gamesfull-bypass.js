@@ -15,9 +15,7 @@ const getLink = async (id) => {
 
 const redirect = async () => {
   const id = getUrlIdentifier();
-  console.log('IDENTIFICADOR', id);
   const link = await getLink(id);
-  console.log(link);
   location.href = link;
 };
 
