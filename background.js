@@ -3,6 +3,7 @@ chrome.runtime.onInstalled.addListener(() => {
     ctAutoRedirect: true,
     jpShowLinks: true,
     animepls: true,
+    gamesfull: true,
   };
   chrome.storage.sync.set({ options: defaultConfig });
 });
@@ -44,4 +45,10 @@ runOnCurrentTab({
   option: 'animepls',
   files: ['/scripts/animpls-bypass.js'],
   hostsSuffixes: ['animepls.ga'],
+});
+
+runOnCurrentTab({
+  option: 'gamesfull',
+  files: ['/scripts/gamesfull-bypass.js'],
+  hostsSuffixes: ['referen.app'],
 });
