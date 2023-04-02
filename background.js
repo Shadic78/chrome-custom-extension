@@ -4,6 +4,7 @@ chrome.runtime.onInstalled.addListener(() => {
     jpShowLinks: true,
     animepls: true,
     gamesfull: true,
+    nsw2u: true,
   };
   chrome.storage.sync.set({ options: defaultConfig });
 });
@@ -51,4 +52,10 @@ runOnCurrentTab({
   option: 'gamesfull',
   files: ['/scripts/gamesfull-bypass.js'],
   hostsSuffixes: ['referen.app'],
+});
+
+runOnCurrentTab({
+  option: 'nsw2u',
+  files: ['/scripts/switch-bypass.js'],
+  hostsSuffixes: ['nsw2u.com'],
 });
